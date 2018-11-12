@@ -1,9 +1,31 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-import { colors, animations } from '../webhart-base/utils/style'
+import { colors } from '../webhart-base/utils/style'
+
+export const animations = {
+  /* The typing effect */
+  typing: keyframes`
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    `,
+  /* The typewriter cursor effect */
+  blinkCaret: keyframes`
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: blue;
+      }
+    `,
+}
 
 const Wrapper = styled('span')`
-  border-right: 7px solid ${colors.lightBlue};
+  border-right: 7px solid blue;
   animation: ${animations.blinkCaret} 0.75s step-end infinite;
   margin-right: 0;
 `
